@@ -33,16 +33,16 @@ import re
 	# print "No match!!"	
 	
 
-cards = [str(x) for x in range(5)];
-num = [x for x in range(2,7)];
-counter = dict(zip(cards, num));
-print(counter);
+cards = [str(x) for x in range(5)]
+num = [x for x in range(2,7)]
+counter = dict(zip(cards, num))
+print(counter)
 for k in counter.keys():
-	print k, counter[k];
+	print k, counter[k]
 	
-d = chr(ord("c")+ 1);
+d = chr(ord("c")+ 1)
 print(type(d))
 line = "hello world"
 
 for c in line:
-	print(chr(ord(c) + 1));
+	print(chr(ord(c) + 1)),

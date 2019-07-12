@@ -1,5 +1,11 @@
 #coding:utf-8
 import sys
+
+x = [1, 3, 4]
+if(len(x) > 2 and x[5] == 8):
+	print "sucess"
+else:
+	print "fail"
 sys.stdin = open("fact.txt")
 for lines in sys.stdin:
 	# lines = "4";

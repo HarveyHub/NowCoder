@@ -6,20 +6,20 @@
 #include <time.h>
 using namespace std;
 
-int main ()
+int main()
 {
     int myints[] = {10, 20, 30, 40, 50, 60, 70};
     vector<int> myvector;
     vector<int>::iterator it;
 
-    myvector.resize(7);   // 为容器myvector分配空间
-    copy(myints, myints+7, ostream_iterator<int>(cout," "));
+    myvector.resize(7); // 为容器myvector分配空间
+    copy(myints, myints + 7, ostream_iterator<int>(cout, " "));
     //copy用法一：
     //将数组myints中的七个元素复制到myvector容器中
-    copy ( myints, myints+7, myvector.begin() );
+    copy(myints, myints + 7, myvector.begin());
 
     cout << "myvector contains: ";
-    for ( it = myvector.begin();  it != myvector.end();  ++it )
+    for (it = myvector.begin(); it != myvector.end(); ++it)
     {
         cout << " " << *it;
     }
@@ -30,7 +30,7 @@ int main ()
     copy(myints + 1, myints + 7, myints);
 
     cout << "myints contains: ";
-    for ( size_t i = 0; i < 7; ++i )
+    for (size_t i = 0; i < 7; ++i)
     {
         cout << " " << myints[i];
     }
@@ -39,7 +39,7 @@ int main ()
     typedef vector<int> IntVector;
     typedef istream_iterator<int> IstreamItr;
     typedef ostream_iterator<int> OstreamItr;
-    typedef back_insert_iterator< IntVector > BackInsItr;
+    typedef back_insert_iterator<IntVector> BackInsItr;
 
     // IntVector myvector;
 
@@ -52,30 +52,30 @@ int main ()
     cout << "Output : " << endl;
     copy(myvector.begin(), myvector.end(), OstreamItr(cout, " "));
     cout << endl;
-	
-	int *space = new int[10];
-	for(int i = 0; i < 10; i++)
-	{
-		cout << space[i] << " ";
-	}
-	cout << endl;
-	int *p, *q;
-	p = q = space;
-	++q;
-	*p = 5;
-	for(int i = 0; i < 10; i++)
-	{
-		cout << space[i] << " ";
-	}
-	cout << endl;
-	
-	srand(time(NULL));
-	unsigned len = 100;
-	int* ints = new int[len];
-	for(int i = 0;i < len; i++)
-	{
-		ints[i] = rand() % 100 - 50;
-	}
-	copy(ints, ints+len, ostream_iterator<int>(cout, " "));
+
+    int *space = new int[10];
+    for (int i = 0; i < 10; i++)
+    {
+        cout << space[i] << " ";
+    }
+    cout << endl;
+    int *p, *q;
+    p = q = space;
+    ++q;
+    *p = 5;
+    for (int i = 0; i < 10; i++)
+    {
+        cout << space[i] << " ";
+    }
+    cout << endl;
+
+    srand(time(NULL));
+    unsigned len = 100;
+    int *ints = new int[len];
+    for (unsigned i = 0; i < len; i++)
+    {
+        ints[i] = rand() % 100 - 50;
+    }
+    copy(ints, ints + len, ostream_iterator<int>(cout, " "));
     return 0;
 }
